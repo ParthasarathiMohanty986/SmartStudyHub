@@ -1,0 +1,250 @@
+:root {
+  --primary: #4f46e5;
+  --primary-soft: #eef2ff;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --panel: #ffffff;
+  --border: #e5e7eb;
+  --success: #10b981;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+  --shadow: 0 15px 30px rgba(31, 41, 55, 0.08);
+}
+
+body {
+  background: linear-gradient(180deg, #f8fafc 0%, #f3f4f6 100%);
+  font-family: 'Segoe UI', sans-serif;
+  color: var(--text);
+}
+
+.section-tag {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--primary);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.page-heading {
+  font-size: clamp(2rem, 2vw + 1rem, 2.6rem);
+  font-weight: 700;
+  margin: 0;
+}
+
+.panel {
+  background: var(--panel);
+  border: 1px solid rgba(229, 231, 235, 0.9);
+  border-radius: 1.2rem;
+  box-shadow: var(--shadow);
+  padding: 1.25rem;
+}
+
+.stat-card {
+  border-radius: 1.2rem;
+  padding: 1.3rem 1.2rem;
+  box-shadow: var(--shadow);
+  min-height: 130px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.stat-card h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0.25rem 0 0;
+}
+
+.stat-label {
+  color: var(--muted);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.bg-light-blue { background: #edf6ff; }
+.bg-light-yellow { background: #fff7e6; }
+.bg-light-green { background: #ecfdf5; }
+.bg-light-purple { background: #f5f3ff; }
+
+.task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.task-item {
+  border: 1px solid var(--border);
+  background: #fff;
+  border-radius: 0.9rem;
+  padding: 1rem;
+}
+
+.task-item.compact {
+  padding: 0.75rem 0.9rem;
+}
+
+.task-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  align-items: flex-start;
+}
+
+.task-header h4 {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.badge-status {
+  border-radius: 999px;
+  font-size: 0.7rem;
+  padding: 0.38rem 0.7rem;
+  font-weight: 600;
+}
+
+.badge-status.pending {
+  background: #fff7e6;
+  color: #92400e;
+}
+
+.badge-status.completed {
+  background: #ecfdf5;
+  color: #065f46;
+}
+
+.task-meta {
+  color: var(--muted);
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
+}
+
+.task-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.8rem;
+}
+
+.empty-state {
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: var(--muted);
+  border: 1px dashed var(--border);
+  border-radius: 1rem;
+  background: #f9fafb;
+  padding: 1.2rem;
+}
+
+.plan-card {
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  background: #fff;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.plan-day {
+  margin-top: 0.8rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid var(--border);
+}
+
+.plan-day h5 {
+  margin-bottom: 0.5rem;
+}
+
+.quiz-card {
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  background: #fff;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.option-btn {
+  display: block;
+  width: 100%;
+  text-align: left;
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  background: #f9fafb;
+  padding: 0.75rem 0.9rem;
+  margin-bottom: 0.5rem;
+  transition: 0.2s ease;
+}
+
+.option-btn:hover {
+  border-color: var(--primary);
+}
+
+.option-btn.selected {
+  background: var(--primary-soft);
+  border-color: var(--primary);
+}
+
+.option-btn.correct {
+  background: #dcfce7;
+  border-color: var(--success);
+}
+
+.option-btn.incorrect {
+  background: #fee2e2;
+  border-color: var(--danger);
+}
+
+.chat-panel {
+  min-height: 600px;
+}
+
+.chat-messages {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  min-height: 420px;
+  max-height: 500px;
+  overflow-y: auto;
+  padding-right: 0.2rem;
+}
+
+.message {
+  display: flex;
+}
+
+.message.user {
+  justify-content: flex-end;
+}
+
+.message-bubble {
+  max-width: 75%;
+  padding: 0.8rem 1rem;
+  border-radius: 1rem;
+  line-height: 1.5;
+  white-space: pre-wrap;
+}
+
+.message.bot .message-bubble {
+  background: #eef2ff;
+  color: var(--text);
+  border-bottom-left-radius: 0.25rem;
+}
+
+.message.user .message-bubble {
+  background: var(--primary);
+  color: white;
+  border-bottom-right-radius: 0.25rem;
+}
+
+@media (max-width: 768px) {
+  .task-header {
+    flex-direction: column;
+  }
+
+  .chat-panel {
+    min-height: 480px;
+  }
+}

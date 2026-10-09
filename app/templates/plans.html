@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% block title %}Study Plans | AI Study Assistant{% endblock %}
+{% block page %}plans{% endblock %}
+
+{% block content %}
+<section class="mb-4">
+  <p class="section-tag mb-2">AI productivity</p>
+  <h1 class="page-heading">Study plan generator</h1>
+</section>
+
+<div class="row g-4">
+  <div class="col-lg-5">
+    <div class="panel">
+      <h3 class="mb-3">Create a plan</h3>
+      <form id="plan-form">
+        <div class="mb-3">
+          <label class="form-label" for="plan-subject">Subject or learning goal</label>
+          <input id="plan-subject" class="form-control" name="subject" required />
+        </div>
+        <div class="row g-3">
+          <div class="col-md-6">
+            <label class="form-label" for="plan-days">Number of days</label>
+            <input id="plan-days" type="number" min="1" max="30" value="7" class="form-control" name="days" required />
+          </div>
+          <div class="col-md-6">
+            <label class="form-label" for="plan-level">Skill level</label>
+            <select id="plan-level" class="form-select" name="level">
+              <option>Beginner</option>
+              <option>Intermediate</option>
+              <option>Advanced</option>
+            </select>
+          </div>
+        </div>
+        <div class="mb-3 mt-3">
+          <label class="form-label" for="plan-minutes">Available study time per day</label>
+          <input id="plan-minutes" type="number" min="15" max="600" value="45" class="form-control" name="daily_minutes" required />
+        </div>
+        <div class="mb-3">
+          <label class="form-label" for="plan-notes">Additional instructions</label>
+          <textarea id="plan-notes" class="form-control" name="notes" rows="3" placeholder="Focus on basics, include revision blocks, etc."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary w-100">
+          <span class="button-text">Generate plan</span>
+          <span class="spinner-border spinner-border-sm d-none ms-2" role="status" aria-hidden="true"></span>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <div class="col-lg-7">
+    <div class="panel">
+      <div class="d-flex justify-content-between align-items-center flex-wrap gap-3 mb-3">
+        <h3 class="mb-0">Generated plan</h3>
+        <button id="save-plan-btn" class="btn btn-outline-success d-none" type="button">Save plan</button>
+      </div>
+      <div id="plan-output" class="empty-state">
+        <i class="bi bi-calendar2-check fs-1 text-muted"></i>
+        <p class="mt-3 mb-0">Your generated study plan will appear here.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="panel mt-4">
+  <h3 class="mb-3">Saved plans</h3>
+  <div id="saved-plans-list" class="row g-3"></div>
+</div>
+{% endblock %}

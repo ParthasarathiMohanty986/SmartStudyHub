@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block title %}Task Manager | AI Study Assistant{% endblock %}
+{% block page %}tasks{% endblock %}
+
+{% block content %}
+<section class="mb-4">
+  <p class="section-tag mb-2">Productivity</p>
+  <h1 class="page-heading">Task manager</h1>
+</section>
+
+<div class="row g-4">
+  <div class="col-lg-4">
+    <div class="panel">
+      <h3 class="mb-3">Add a task</h3>
+      <form id="task-form">
+        <div class="mb-3">
+          <label class="form-label" for="task-title">Title</label>
+          <input id="task-title" class="form-control" required />
+        </div>
+        <div class="mb-3">
+          <label class="form-label" for="task-description">Description</label>
+          <textarea id="task-description" class="form-control" rows="4" required></textarea>
+        </div>
+        <div class="mb-3">
+          <label class="form-label" for="task-due-date">Due date</label>
+          <input id="task-due-date" type="date" class="form-control" />
+        </div>
+        <button type="submit" class="btn btn-primary w-100">Create task</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="col-lg-8">
+    <div class="panel">
+      <div class="d-flex justify-content-between align-items-center flex-wrap gap-3 mb-3">
+        <h3 class="mb-0">Your tasks</h3>
+        <div class="btn-group" role="group" aria-label="Task filter">
+          <button type="button" class="btn btn-outline-primary active" data-status="all">All</button>
+          <button type="button" class="btn btn-outline-primary" data-status="pending">Pending</button>
+          <button type="button" class="btn btn-outline-primary" data-status="completed">Completed</button>
+        </div>
+      </div>
+      <div id="task-list" class="task-list"></div>
+    </div>
+  </div>
+</div>
+{% endblock %}

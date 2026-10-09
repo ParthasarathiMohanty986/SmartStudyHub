@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% block title %}Dashboard | AI Study Assistant{% endblock %}
+{% block page %}dashboard{% endblock %}
+
+{% block content %}
+<section class="mb-4">
+  <div class="d-flex justify-content-between align-items-center flex-wrap gap-3">
+    <div>
+      <p class="section-tag mb-2">Overview</p>
+      <h1 class="page-heading mb-0">Your study dashboard</h1>
+    </div>
+    <a class="btn btn-primary" href="/chat">
+      <i class="bi bi-chat-dots me-2"></i>Open AI chat
+    </a>
+  </div>
+</section>
+
+<section class="row g-4 mb-5">
+  <div class="col-md-6 col-xl-3">
+    <div class="stat-card bg-light-blue">
+      <span class="stat-label">Total tasks</span>
+      <h3 id="stat-total-tasks">0</h3>
+    </div>
+  </div>
+  <div class="col-md-6 col-xl-3">
+    <div class="stat-card bg-light-yellow">
+      <span class="stat-label">Pending tasks</span>
+      <h3 id="stat-pending-tasks">0</h3>
+    </div>
+  </div>
+  <div class="col-md-6 col-xl-3">
+    <div class="stat-card bg-light-green">
+      <span class="stat-label">Completed tasks</span>
+      <h3 id="stat-completed-tasks">0</h3>
+    </div>
+  </div>
+  <div class="col-md-6 col-xl-3">
+    <div class="stat-card bg-light-purple">
+      <span class="stat-label">Saved plans</span>
+      <h3 id="stat-saved-plans">0</h3>
+    </div>
+  </div>
+</section>
+
+<section class="row g-4">
+  <div class="col-xl-7">
+    <div class="panel">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h3 class="mb-0">Recent tasks</h3>
+        <a href="/tasks" class="btn btn-sm btn-outline-primary">Manage tasks</a>
+      </div>
+      <div id="dashboard-task-list" class="task-list compact"></div>
+    </div>
+  </div>
+
+  <div class="col-xl-5">
+    <div class="panel">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h3 class="mb-0">Saved study plans</h3>
+        <a href="/plans" class="btn btn-sm btn-outline-primary">View plans</a>
+      </div>
+      <div id="dashboard-plan-list" class="list-group list-group-flush"></div>
+    </div>
+  </div>
+</section>
+{% endblock %}

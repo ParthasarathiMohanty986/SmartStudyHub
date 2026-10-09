@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title %}AI Chat | AI Study Assistant{% endblock %}
+{% block page %}chat{% endblock %}
+
+{% block content %}
+<section class="mb-4">
+  <p class="section-tag mb-2">AI assistant</p>
+  <h1 class="page-heading">Study assistant chat</h1>
+</section>
+
+<div class="panel chat-panel">
+  <div id="chat-messages" class="chat-messages">
+    <div class="message bot">
+      <div class="message-bubble">Hello! Ask me to create a task, list your study work, complete a task, or generate a study plan.</div>
+    </div>
+  </div>
+
+  <form id="chat-form" class="mt-4">
+    <div class="input-group input-group-lg">
+      <input id="chat-input" type="text" class="form-control" placeholder="Ask about your study plan, tasks, or next actions..." required />
+      <button type="submit" class="btn btn-primary">Send</button>
+    </div>
+  </form>
+</div>
+{% endblock %}
